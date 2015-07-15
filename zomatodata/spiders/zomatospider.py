@@ -1,6 +1,6 @@
 import scrapy
 from scrapy.spiders import Spider
-from scrapy.selector import Selector
+from re import findall
 
 from zomatodata.items import Restaurant
 
@@ -33,4 +33,21 @@ class ZomatoSpider(Spider):
 
         rest['r_name'] = response.xpath('//h1/a/span/text()').extract()[0]
         rest['r_id'] = response.xpath('//*/@data-res-id').extract()[0]
-        print rest
+        rest['r_type'] = response.css('div.res-info-estabs > a::text').extract()[0]
+        rest['link'] = response.url
+        rest['city'] = findall('\\.com\/([a-z]+)\/', rest['link'])[0]
+        rest['cost'] = response.css('span[itemprop="priceRange"]::text').extract()[0]
+        rest['area'] = response.css('span[itemprop="addressLocality"]::text').extract()[0]
+        rest['rating'] = response.css('div[itemprop="ratingValue"]::text').extract()[0]
+        rest['rating_votes'] = response.css("span[itemprop='ratingCount']::text").extract()[0]
+        rest['reviews'] = response.css("div.res-main-stats-num::text").extract()[0]
+        rest['photos'] = response.css("div#ph_count::text").extract()[0]
+        rest['bookmarks'] = response.css("div#wtt_count::text").extract()[0]
+        rest['checkins'] = response.css("div#bt_count::text").extract()[0]
+        rest['cuisines'] = response.css("a[itemprop='servesCuisine']::text").extract()
+        rest['collections'] = response.css("span.res-page-collection-text > a::text").extract()
+        rest['r_postcode'] = response.css("span[itemprop='postalCode']::text").extract()[0]
+        rest['r_address'] = response.css("div.res-main-address-text::text").extract()[0]
+        yield rest
+
+
