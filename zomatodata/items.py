@@ -5,6 +5,8 @@ class Restaurant(Item):
     r_name = Field()
     r_id = Field()
     r_type = Field()
+    r_postcode = Field()
+    r_address = Field()
     city = Field()
     link = Field()
     cost = Field()
