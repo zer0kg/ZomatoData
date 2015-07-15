@@ -3,5 +3,6 @@ NEWSPIDER_MODULE = 'zomatodata.spiders'
 DEFAULT_ITEM_CLASS = 'zomatodata.items.Restaurant'
 
 ITEM_PIPELINES = {
-    'zomatospider.pipelines.CostPipeline': 1
+    'zomatodata.pipelines.CostPipeline': 300,
+    'zomatodata.pipelines.RatingPipeline': 400
 }
