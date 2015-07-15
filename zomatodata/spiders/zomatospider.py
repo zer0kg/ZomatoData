@@ -46,8 +46,6 @@ class ZomatoSpider(Spider):
         rest['checkins'] = response.css("div#bt_count::text").extract()[0]
         rest['cuisines'] = response.css("a[itemprop='servesCuisine']::text").extract()
         rest['collections'] = response.css("span.res-page-collection-text > a::text").extract()
-        rest['r_postcode'] = response.css("span[itemprop='postalCode']::text").extract()[0]
-        rest['r_address'] = response.css("div.res-main-address-text::text").extract()[0]
+        rest['r_postcode'] = response.css("span[itemprop='postalCode']::text").extract()
+        rest['r_address'] = response.css("div.res-main-address-text::text").extract()
         yield rest
-
-
