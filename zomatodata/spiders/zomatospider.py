@@ -24,9 +24,9 @@ class ZomatoSpider(Spider):
             url = rest.xpath('@href').extract()[0]
             yield scrapy.Request(url, callback=self.parse_rest)
 
-        # next_link = response.css('ul.paginator-control > li.current + li.active').xpath('a/@href')
-        # if next_link:
-        #     yield scrapy.Request(next_link.extract()[0], callback=self.parse)
+        next_link = response.css('ul.paginator-control > li.current + li.active').xpath('a/@href')
+        if next_link:
+            yield scrapy.Request(next_link.extract()[0], callback=self.parse)
 
     def parse_rest(self, response):
         rest = Restaurant()
@@ -38,14 +38,15 @@ class ZomatoSpider(Spider):
         rest['city'] = findall('\\.com\/([a-z]+)\/', rest['link'])[0]
         rest['cost'] = response.css('span[itemprop="priceRange"]::text').extract()[0]
         rest['area'] = response.css('span[itemprop="addressLocality"]::text').extract()[0]
-        rest['rating'] = response.css('div[itemprop="ratingValue"]::text').extract()[0]
-        rest['rating_votes'] = response.css("span[itemprop='ratingCount']::text").extract()[0]
-        rest['reviews'] = response.css("div.res-main-stats-num::text").extract()[0]
-        rest['photos'] = response.css("div#ph_count::text").extract()[0]
-        rest['bookmarks'] = response.css("div#wtt_count::text").extract()[0]
-        rest['checkins'] = response.css("div#bt_count::text").extract()[0]
+        rest['rating'] = response.css('div[itemprop="ratingValue"]::text').extract()
+        rest['rating_votes'] = response.css("span[itemprop='ratingCount']::text").extract()
+        rest['reviews'] = response.css("div.res-main-stats-num::text").extract()
+        rest['photos'] = response.css("div#ph_count::text").extract()
+        rest['bookmarks'] = response.css("div#wtt_count::text").extract()
+        rest['checkins'] = response.css("div#bt_count::text").extract()
         rest['cuisines'] = response.css("a[itemprop='servesCuisine']::text").extract()
         rest['collections'] = response.css("span.res-page-collection-text > a::text").extract()
         rest['r_postcode'] = response.css("span[itemprop='postalCode']::text").extract()
         rest['r_address'] = response.css("div.res-main-address-text::text").extract()
+        rest['r_latitude'] = response.selector.re("\|([\d.]+),([\d.]+)\|")
         yield rest
