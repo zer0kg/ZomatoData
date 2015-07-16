@@ -1,6 +1,11 @@
 import re
 import csv
 from items import Restaurant
+import unicodedata
+
+
+def unicode_convert(s):
+    return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
 
 class CostPipeline(object):
     def process_item(self, item, spider):
@@ -33,6 +38,11 @@ class AddressPipeline(object):
     def process_item(self, item, spider):
         add = ''.join(map(lambda x: x.strip(), item['r_address']))
         item['r_address'] = add
+
+        try:
+            item['area'] = item['area'][0]
+        except IndexError:
+            item['area'] = 'NA'
         return item
 
 class OtherInfoPipeline(object):
@@ -63,6 +73,7 @@ class OtherInfoPipeline(object):
             item['rating_votes'] = 'NA'
         return item
 
+
 class LocationPipeline(object):
     def process_item(self, item, spider):
         l = len(item['r_latitude'])
@@ -76,7 +87,7 @@ class LocationPipeline(object):
 
 class CSVPipeline(object):
     def __init__(self):
-        names = Restaurant().keys()
+        names = Restaurant().fields
         self.csv_file = open('res.csv', 'w')
         self.file = csv.DictWriter(self.csv_file, fieldnames=names)
         self.file.writeheader()
