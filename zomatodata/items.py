@@ -19,4 +19,5 @@ class Restaurant(Item):
     checkins = Field()
     cuisines = Field()
     collections = Field()
-
+    r_latitude = Field()
+    r_longitude = Field()
