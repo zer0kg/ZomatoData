@@ -6,5 +6,7 @@ ITEM_PIPELINES = {
     'zomatodata.pipelines.CostPipeline': 300,
     'zomatodata.pipelines.RatingPipeline': 400,
     'zomatodata.pipelines.PostalCodePipeline': 500,
-    'zomatodata.pipelines.AddressPipeline': 600
+    'zomatodata.pipelines.AddressPipeline': 600,
+    'zomatodata.pipelines.OtherInfoPipeline': 700,
+    'zomatodata.pipelines.LocationPipeline': 800
 }
