@@ -76,7 +76,7 @@ class LocationPipeline(object):
 
 class CSVPipeline(object):
     def __init__(self):
-        names = Restaurant.keys()
+        names = Restaurant().keys()
         self.csv_file = open('res.csv', 'w')
         self.file = csv.DictWriter(self.csv_file, fieldnames=names)
         self.file.writeheader()
