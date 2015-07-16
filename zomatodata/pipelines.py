@@ -1,11 +1,12 @@
 import re
+import csv
+from items import Restaurant
 
 class CostPipeline(object):
     def process_item(self, item, spider):
-        cost = item['cost']
         try:
-            item['cost'] = int(re.sub('[^0-9]+', '', cost))
-        except ValueError:
+            item['cost'] = int(re.sub('[^0-9]+', '', item['cost'][0]))
+        except ValueError or IndexError:
             item['cost'] = 'NA'
         return item
 
@@ -72,3 +73,16 @@ class LocationPipeline(object):
             item['r_latitude'], item['r_longitude'] = map(float, item['r_latitude'])
 
         return item
+
+class CSVPipeline(object):
+    def __init__(self):
+        names = Restaurant.keys()
+        self.csv_file = open('res.csv', 'w')
+        self.file = csv.DictWriter(self.csv_file, fieldnames=names)
+        self.file.writeheader()
+
+    def process_item(self, item, spider):
+        self.file.writerow(item)
+
+    def close_spider(self, spider):
+        self.csv_file.close()
