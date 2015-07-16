@@ -6,7 +6,7 @@ class CostPipeline(object):
     def process_item(self, item, spider):
         try:
             item['cost'] = int(re.sub('[^0-9]+', '', item['cost'][0]))
-        except ValueError or IndexError:
+        except (ValueError, IndexError):
             item['cost'] = 'NA'
         return item
 
@@ -16,7 +16,7 @@ class RatingPipeline(object):
         try:
             item['rating'] = item['rating'][0]
             item['rating'] = float(item['rating'].strip())
-        except ValueError or IndexError:
+        except (ValueError, IndexError):
             item['rating'] = 'NA'
         return item
 
@@ -39,27 +39,27 @@ class OtherInfoPipeline(object):
     def process_item(self, item, spider):
         try:
             item['bookmarks'] = int(item['bookmarks'][0])
-        except ValueError or IndexError:
+        except (ValueError, IndexError):
             item['bookmarks'] = 'NA'
 
         try:
             item['checkins'] = int(item['checkins'][0])
-        except ValueError or IndexError:
+        except (ValueError, IndexError):
             item['checkins'] = 'NA'
 
         try:
             item['photos'] = int(item['photos'][0])
-        except ValueError or IndexError:
+        except (ValueError, IndexError):
             item['photos'] = 'NA'
 
         try:
             item['reviews'] = int(item['reviews'][0])
-        except ValueError or IndexError:
+        except (ValueError, IndexError):
             item['reviews'] = 'NA'
 
         try:
             item['rating_votes'] = int(item['rating_votes'][0])
-        except ValueError or IndexError:
+        except (ValueError, IndexError):
             item['rating_votes'] = 'NA'
         return item
 
