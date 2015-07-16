@@ -1,5 +1,7 @@
 from scrapy.item import Item, Field
 
+# TODO: Rewrite the below class to include Item Loaders
+
 class Restaurant(Item):
 
     r_name = Field()
