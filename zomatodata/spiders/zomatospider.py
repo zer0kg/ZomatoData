@@ -24,9 +24,10 @@ class ZomatoSpider(Spider):
             url = rest.xpath('@href').extract()[0]
             yield scrapy.Request(url, callback=self.parse_rest)
 
-        next_link = response.css('ul.paginator-control > li.current + li.active').xpath('a/@href')
+        next_link = response.css('li.current + li.active a').xpath('@href').extract()
+        print "\n\nNEXT LINK:", next_link
         if next_link:
-            yield scrapy.Request(next_link.extract()[0], callback=self.parse)
+            yield scrapy.Request(response.urljoin(next_link[0]), callback=self.parse)
 
     def parse_rest(self, response):
         rest = Restaurant()
