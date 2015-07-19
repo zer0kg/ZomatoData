@@ -2,8 +2,9 @@ import scrapy
 from scrapy.spiders import Spider
 from re import findall
 from zomatodata.items import Restaurant
+from zomatodata.items import RestItemLoader
 
-
+# TODO: Rewrite parse_rest with ItemLoaders
 
 class ZomatoSpider(Spider):
     name = 'zomatospider'
@@ -52,6 +53,36 @@ class ZomatoSpider(Spider):
         rest['cuisines'] = response.css("a[itemprop='servesCuisine']::text").extract()
         rest['collections'] = response.css("span.res-page-collection-text > a::text").extract()
         rest['r_address'] = response.css("div.res-main-address-text::text").extract()
-        rest['r_latitude'] = response.selector.re("\|([\d.]+),([\d.]+)\|")
+        rest['r_latitude'] = response.selector.re("\|([\d.]+),[\d.]+\|")
+        rest['r_longitude'] = response.selector.re("\|[\d.]+,([\d.]+)\|")
+
 
         yield rest
+
+    def parse_rest2(self, response):
+        rest = RestItemLoader(item=Restaurant, response=response)
+
+        rest.add_xpath('r_name', '//h1/a/span/text()')
+        rest.add_xpath('r_id', '//*/@data-res-id')
+        rest.add_css('r_type', 'div.res-info-estabs > a::text')
+        rest.add_value('link', response.url)
+        rest.add_value('city',  findall('\\.com\/([a-z]+)\/', rest.item['link']))
+        rest.add_css('cost', 'span[itemprop="priceRange"]::text')
+        rest.add_css('area', 'span[itemprop="addressLocality"]::text')
+        rest.add_css('rating', 'div[itemprop="ratingValue"]::text')
+        rest.add_css('rating_votes', "span[itemprop='ratingCount']::text")
+        rest.add_css('reviews', "div.res-main-stats-num::text")
+        rest.add_css('photos', "div#ph_count::text")
+        rest.add_css('bookmarks', "div#wtt_count::text")
+        rest.add_css('checkins', "div#bt_count::text")
+        rest.add_css('cuisines', "a[itemprop='servesCuisine']::text")
+        rest.add_css('collections', "span.res-page-collection-text > a::text")
+        rest.add_css('r_address', "div.res-main-address-text::text")
+        rest.add_value('r_latitude', value=response.selector.re("\|([\d.]+),[\d.]+\|"))
+        rest.add_value('r_longitude', value=response.selector.re("\|[\d.]+,([\d.]+)\|"))
+
+
+
+
+
+
