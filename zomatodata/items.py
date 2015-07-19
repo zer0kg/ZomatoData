@@ -4,7 +4,7 @@ from scrapy.loader.processors import TakeFirst, MapCompose, Identity, Join
 import unicodedata
 import re
 
-# TODO: Test ItemLoaders 
+# TODO: Test ItemLoaders
 
 class Restaurant(Item):
 
@@ -30,11 +30,16 @@ class Restaurant(Item):
 def unicode_convert(s):
     return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
 
-class RestItem(ItemLoader):
+class RestItemLoader(ItemLoader):
     default_input_processor = MapCompose(unicode_convert)
     default_output_processor = TakeFirst()
 
     r_id_in = MapCompose(int)
+
+    link_in = Identity()
+    link_out = Identity()
+
+    city_in = MapCompose(unicode_convert, str.capitalize)
 
     cost_in = MapCompose(lambda x: re.sub('[^0-9]+', '', x), int)
 
