@@ -30,31 +30,43 @@ class Restaurant(Item):
 def unicode_convert(s):
     return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
 
+def int_convert(x):
+    try:
+        return int(x)
+    except ValueError:
+        return None
+
+def float_convert(x):
+    try:
+        return float(x)
+    except ValueError:
+        return None
+
 class RestItemLoader(ItemLoader):
     default_input_processor = MapCompose(unicode_convert)
     default_output_processor = TakeFirst()
 
-    r_id_in = MapCompose(int)
+    r_id_in = MapCompose(int_convert)
 
     link_in = Identity()
     link_out = Identity()
 
     city_in = MapCompose(unicode_convert, str.capitalize)
 
-    cost_in = MapCompose(lambda x: re.sub('[^0-9]+', '', x), int)
+    cost_in = MapCompose(lambda x: re.sub('[^0-9]+', '', x), int_convert)
 
-    rating_in = MapCompose(str.strip, float)
+    rating_in = MapCompose(unicode.strip, float)
 
-    rating_votes_in = MapCompose(int)
-    reviews_in = MapCompose(int)
-    photos_in = MapCompose(int)
-    bookmarks_in = MapCompose(int)
-    checkins_in = MapCompose(int)
+    rating_votes_in = MapCompose(int_convert)
+    reviews_in = MapCompose(int_convert)
+    photos_in = MapCompose(int_convert)
+    bookmarks_in = MapCompose(int_convert)
+    checkins_in = MapCompose(int_convert)
 
     cuisines_out = Identity()
     collections_out = Identity()
 
-    r_address_in = MapCompose(str.strip, unicode_convert)
+    r_address_in = MapCompose(unicode.strip, unicode_convert)
     r_address_out = Join()
 
     r_latitude_in = MapCompose(float)
