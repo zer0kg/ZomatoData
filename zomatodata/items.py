@@ -55,7 +55,7 @@ class RestItemLoader(ItemLoader):
 
     cost_in = MapCompose(lambda x: re.sub('[^0-9]+', '', x), int_convert)
 
-    rating_in = MapCompose(unicode.strip, float)
+    rating_in = MapCompose(unicode.strip, float_convert)
 
     rating_votes_in = MapCompose(int_convert)
     reviews_in = MapCompose(int_convert)
@@ -69,8 +69,8 @@ class RestItemLoader(ItemLoader):
     r_address_in = MapCompose(unicode.strip, unicode_convert)
     r_address_out = Join()
 
-    r_latitude_in = MapCompose(float)
-    r_longitude_in = MapCompose(float)
+    r_latitude_in = MapCompose(float_convert)
+    r_longitude_in = MapCompose(float_convert)
 
 
 
