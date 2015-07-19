@@ -1,10 +1,10 @@
 from scrapy.item import Item, Field
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import TakeFirst, MapCompose
+from scrapy.loader.processors import TakeFirst, MapCompose, Identity, Join
 import unicodedata
 import re
 
-# TODO: Rewrite the below class to include Item Loaders
+# TODO: Test ItemLoaders 
 
 class Restaurant(Item):
 
@@ -38,7 +38,28 @@ class RestItem(ItemLoader):
 
     cost_in = MapCompose(lambda x: re.sub('[^0-9]+', '', x), int)
 
-    area_in = MapCompose()
+    rating_in = MapCompose(str.strip, float)
+
+    rating_votes_in = MapCompose(int)
+    reviews_in = MapCompose(int)
+    photos_in = MapCompose(int)
+    bookmarks_in = MapCompose(int)
+    checkins_in = MapCompose(int)
+
+    cuisines_out = Identity()
+    collections_out = Identity()
+
+    r_address_in = MapCompose(str.strip, unicode_convert)
+    r_address_out = Join()
+
+    r_latitude_in = MapCompose(float)
+    r_longitude_in = MapCompose(float)
+
+
+
+
+
+
 
 
 
