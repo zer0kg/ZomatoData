@@ -17,15 +17,6 @@ class RatingPipeline(object):
             item['rating'] = 'NA'
         return item
 
-class PostalCodePipeline(object):
-    def process_item(self, item, spider):
-        if len(item['r_postcode']) == 0:
-            item['r_postcode'] = 'NA'
-        else:
-            item['r_postcode'] = int(item['r_postcode'][0])
-
-        return item
-
 class AddressPipeline(object):
     def process_item(self, item, spider):
         add = ''.join(map(lambda x: x.strip(), item['r_address']))
