@@ -1,8 +1,9 @@
 import scrapy
 from scrapy.spiders import Spider
 from re import findall
-
 from zomatodata.items import Restaurant
+
+
 
 class ZomatoSpider(Spider):
     name = 'zomatospider'
@@ -41,7 +42,7 @@ class ZomatoSpider(Spider):
         rest['link'] = response.url
         rest['city'] = findall('\\.com\/([a-z]+)\/', rest['link'])[0]
         rest['cost'] = response.css('span[itemprop="priceRange"]::text').extract()
-        rest['area'] = response.css('span[itemprop="addressLocality"]::text').extract()[0]
+        rest['area'] = response.css('span[itemprop="addressLocality"]::text').extract()
         rest['rating'] = response.css('div[itemprop="ratingValue"]::text').extract()
         rest['rating_votes'] = response.css("span[itemprop='ratingCount']::text").extract()
         rest['reviews'] = response.css("div.res-main-stats-num::text").extract()
@@ -50,7 +51,6 @@ class ZomatoSpider(Spider):
         rest['checkins'] = response.css("div#bt_count::text").extract()
         rest['cuisines'] = response.css("a[itemprop='servesCuisine']::text").extract()
         rest['collections'] = response.css("span.res-page-collection-text > a::text").extract()
-        rest['r_postcode'] = response.css("span[itemprop='postalCode']::text").extract()
         rest['r_address'] = response.css("div.res-main-address-text::text").extract()
         rest['r_latitude'] = response.selector.re("\|([\d.]+),([\d.]+)\|")
 
