@@ -4,8 +4,6 @@ from scrapy.loader.processors import TakeFirst, MapCompose, Identity, Join
 import unicodedata
 import re
 
-# TODO: Test ItemLoaders
-
 class Restaurant(Item):
 
     r_name = Field()
