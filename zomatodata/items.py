@@ -49,7 +49,6 @@ class RestItemLoader(ItemLoader):
     r_id_in = MapCompose(int_convert)
 
     link_in = Identity()
-    link_out = Identity()
 
     city_in = MapCompose(unicode_convert, str.capitalize)
 
