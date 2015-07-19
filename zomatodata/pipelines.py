@@ -7,67 +7,6 @@ import unicodedata
 def unicode_convert(s):
     return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
 
-class RatingPipeline(object):
-    def process_item(self, item, spider):
-        # print "RATING =", item['rating']
-        try:
-            item['rating'] = item['rating'][0]
-            item['rating'] = float(item['rating'].strip())
-        except (ValueError, IndexError):
-            item['rating'] = 'NA'
-        return item
-
-class AddressPipeline(object):
-    def process_item(self, item, spider):
-        add = ''.join(map(lambda x: x.strip(), item['r_address']))
-        item['r_address'] = add
-
-        try:
-            item['area'] = item['area'][0]
-        except IndexError:
-            item['area'] = 'NA'
-        return item
-
-class OtherInfoPipeline(object):
-    def process_item(self, item, spider):
-        try:
-            item['bookmarks'] = int(item['bookmarks'][0])
-        except (ValueError, IndexError):
-            item['bookmarks'] = 'NA'
-
-        try:
-            item['checkins'] = int(item['checkins'][0])
-        except (ValueError, IndexError):
-            item['checkins'] = 'NA'
-
-        try:
-            item['photos'] = int(item['photos'][0])
-        except (ValueError, IndexError):
-            item['photos'] = 'NA'
-
-        try:
-            item['reviews'] = int(item['reviews'][0])
-        except (ValueError, IndexError):
-            item['reviews'] = 'NA'
-
-        try:
-            item['rating_votes'] = int(item['rating_votes'][0])
-        except (ValueError, IndexError):
-            item['rating_votes'] = 'NA'
-        return item
-
-
-class LocationPipeline(object):
-    def process_item(self, item, spider):
-        l = len(item['r_latitude'])
-        if l == 0:
-            item['r_latitude'] = 'NA'
-            item['r_longitude'] = 'NA'
-        elif l != 0:
-            item['r_latitude'], item['r_longitude'] = map(float, item['r_latitude'])
-
-        return item
-
 class CSVPipeline(object):
     def __init__(self):
         names = Restaurant().fields
