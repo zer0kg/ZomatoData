@@ -7,14 +7,6 @@ import unicodedata
 def unicode_convert(s):
     return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
 
-class CostPipeline(object):
-    def process_item(self, item, spider):
-        try:
-            item['cost'] = int(re.sub('[^0-9]+', '', item['cost'][0]))
-        except (ValueError, IndexError):
-            item['cost'] = 'NA'
-        return item
-
 class RatingPipeline(object):
     def process_item(self, item, spider):
         # print "RATING =", item['rating']
