@@ -48,7 +48,7 @@ class RestItemLoader(ItemLoader):
 
     link_in = Identity()
 
-    city_in = MapCompose(unicode_convert, str.capitalize)
+    city_in = MapCompose(str.capitalize)
 
     cost_in = MapCompose(lambda x: re.sub('[^0-9]+', '', x), int_convert)
 
