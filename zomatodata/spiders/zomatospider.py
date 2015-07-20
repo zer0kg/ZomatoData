@@ -4,8 +4,6 @@ from re import findall
 from zomatodata.items import Restaurant
 from zomatodata.items import RestItemLoader
 
-# TODO: Rewrite parse_rest with ItemLoaders
-
 class ZomatoSpider(Spider):
     name = 'zomatospider'
     allowed_domains = ['zomato.com']
