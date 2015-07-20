@@ -8,7 +8,7 @@ class ZomatoSpider(Spider):
     name = 'zomatospider'
     allowed_domains = ['zomato.com']
     start_urls = [
-        'https://www.zomato.com/chennai/restaurants?page=105',
+        'https://www.zomato.com/chennai/restaurants?page=110',
         # 'https://www.zomato.com/bangalore/restaurants?page=1',
         # 'https://www.zomato.com/mysore/restaurants?page=1',
         # 'https://www.zomato.com/pune/restaurants?page=1',
@@ -20,7 +20,6 @@ class ZomatoSpider(Spider):
 
 
     def parse(self, response):
-        global COUNT
         for rest in response.css('a.result-title'):
             url = rest.xpath('@href').extract()[0]
             yield scrapy.Request(url, callback=self.parse_rest)
@@ -37,7 +36,7 @@ class ZomatoSpider(Spider):
         rest.add_xpath('r_id', '//*/@data-res-id')
         rest.add_css('r_type', 'div.res-info-estabs > a::text')
         rest.add_value('link', response.url)
-        rest.add_value('city',  findall('\\.com\/([a-z]+)\/', rest.get_value('link')))
+        rest.add_value('city',  findall('\\.com\/([a-z]+)\/', response.url))
         rest.add_css('cost', 'span[itemprop="priceRange"]::text')
         rest.add_css('area', 'span[itemprop="addressLocality"]::text')
         rest.add_css('rating', 'div[itemprop="ratingValue"]::text')
