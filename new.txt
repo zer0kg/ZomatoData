@@ -1,0 +1,59 @@
+cf41bda HEAD@{0}: commit: Uncomment start_urls
+6803045 HEAD@{1}: commit: Temporarily remove Item Pipelines so that spider can deployed to ScrapingHub
+f1b1692 HEAD@{2}: commit: Misc. cleaning up
+f41ab13 HEAD@{3}: commit: Remove additional function to Compose
+0d5928d HEAD@{4}: commit: Remove parse_rest2 function and rename parse_rest2
+7769652 HEAD@{5}: merge itemloadertest: Fast-forward
+7fe0c92 HEAD@{6}: checkout: moving from itemloadertest to master
+7769652 HEAD@{7}: commit: Remove TODO
+aa1d61c HEAD@{8}: commit: Remove TODO
+729e3f2 HEAD@{9}: commit: Remove output processor for link
+e0911f8 HEAD@{10}: commit: Multiple small changes
+ed3baa3 HEAD@{11}: commit: Replace w with wb to prevent extra line in CSV file
+129a2bf HEAD@{12}: commit: Replace float with custom float_convert
+9f72ed5 HEAD@{13}: commit: Write functions for int and float conversion
+0004b1c HEAD@{14}: commit: Remove pipelines from settings
+af2b3ee HEAD@{15}: commit: Add loaders for link and city
+9c18102 HEAD@{16}: commit: Remove all Item Pipelines except CSVPipeline
+4c430d3 HEAD@{17}: commit: Write ItemLoaders for all Fields in separate method
+c972c96 HEAD@{18}: commit: Write ItemLoaders for all Fields for Restaurant
+8732416 HEAD@{19}: commit: Remove PostalCodePipeline
+7ffde98 HEAD@{20}: commit: Remove CostPipeline
+93dc449 HEAD@{21}: commit: Remove selector for postal code
+377ae06 HEAD@{22}: commit: Remove postal code Field
+7fe0c92 HEAD@{23}: checkout: moving from master to itemloadertest
+7fe0c92 HEAD@{24}: commit: Add TODO for item loaders
+ccb04c9 HEAD@{25}: commit: Add exception for rest area
+7c0041d HEAD@{26}: commit: Replace exception with correct format
+712a847 HEAD@{27}: commit: Fix error with TypeError
+bafa641 HEAD@{28}: commit: Add logger to tracker restaurants parsed
+eabba4c HEAD@{29}: commit: Add CSVPipeline to output data to res.csv
+9238fcb HEAD@{30}: commit: Add CSVPipeline to the settings file
+9346256 HEAD@{31}: commit: Modify wrong paginator control
+c6fba41 HEAD@{32}: commit: Modify general rest info to account for NA
+a36a3af HEAD@{33}: commit: Add latitude and longitude of restaurant
+f591798 HEAD@{34}: commit: Add pipelines to settings for Location and Other Info
+dd73fbc HEAD@{35}: commit: Add pipelines for rest info
+2ab61c5 HEAD@{36}: commit: Add postcode and address scrape criteria
+3d2af92 HEAD@{37}: commit: add res.csv to ignore list
+f7b782d HEAD@{38}: commit: Add new item pipelines
+0f851b1 HEAD@{39}: commit: Add item pipeline for address and postal code
+4090185 HEAD@{40}: commit: Add item pipeline for postal code
+bab76cc HEAD@{41}: commit: Add item pipeline for rating number
+eeb207e HEAD@{42}: commit: Add extraction method for each field
+be77047 HEAD@{43}: commit: Add two new items to scrape
+617cf7c HEAD@{44}: commit: Add item pipeline for ratings
+da6cd9b HEAD@{45}: commit: Add item pipelines
+649e098 HEAD@{46}: commit: Add CostPipeline for cleaning cost
+59bb2ca HEAD@{47}: commit: Add parse and parse_rest method
+3d03279 HEAD@{48}: commit: Add .idea file to ignore
+1c937c4 HEAD@{49}: commit: Initial commit
+cc033f8 HEAD@{50}: commit: Add URLs for each city
+6954db5 HEAD@{51}: commit: Initial commit
+35f142d HEAD@{52}: commit: Initial commit
+2656b39 HEAD@{53}: commit: Initial commit
+6971df6 HEAD@{54}: commit: Initial commit
+21efc05 HEAD@{55}: commit: List all necessary fields for collection
+0c0a924 HEAD@{56}: commit: Update scrapy project settings
+eb2d6c2 HEAD@{57}: commit: Fill necessary settings for scrapy project
+10b1fd3 HEAD@{58}: commit (initial): List all necessary fields for collection

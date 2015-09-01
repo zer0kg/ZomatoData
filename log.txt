@@ -1,0 +1,298 @@
+2015-07-20 19:32:56 [scrapy] INFO: Scrapy 1.0.1 started (bot: scrapybot)
+2015-07-20 19:32:56 [scrapy] INFO: Optional features available: ssl, http11, boto
+2015-07-20 19:32:56 [scrapy] INFO: Overridden settings: {'DEFAULT_ITEM_CLASS': 'zomatodata.items.Restaurant', 'NEWSPIDER_MODULE': 'zomatodata.spiders', 'SPIDER_MODULES': ['zomatodata.spiders'], 'LOG_FILE': 'log.txt'}
+2015-07-20 19:32:56 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2015-07-20 19:32:57 [boto] DEBUG: Retrieving credentials from metadata server.
+2015-07-20 19:32:57 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\boto\utils.py", line 219, in retry_url
+    r = opener.open(req)
+  File "C:\Python27\lib\urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "C:\Python27\lib\urllib2.py", line 422, in _open
+    '_open', req)
+  File "C:\Python27\lib\urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "C:\Python27\lib\urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "C:\Python27\lib\urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 10051] A socket operation was attempted to an unreachable network>
+2015-07-20 19:32:57 [boto] ERROR: Unable to read instance data, giving up
+2015-07-20 19:32:57 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-07-20 19:32:57 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-07-20 19:32:57 [scrapy] INFO: Enabled item pipelines: CSVPipeline
+2015-07-20 19:32:57 [scrapy] INFO: Spider opened
+2015-07-20 19:32:57 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-07-20 19:32:57 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2015-07-20 19:32:59 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/restaurants?page=110> (referer: None)
+2015-07-20 19:33:01 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/the-burger-bay-1-selaiyur> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/restaurants?page=111> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/the-burger-bay-1-selaiyur>
+None
+2015-07-20 19:33:02 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/le-quench-t-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/parammakadi-biryani-fast-food-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/dheen-biriyani-george-town> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/le-quench-t-nagar>
+None
+2015-07-20 19:33:02 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/karthik-hotel-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/parammakadi-biryani-fast-food-maduravoyal>
+None
+2015-07-20 19:33:02 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/omar-khayyam-1-t-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/dheen-biriyani-george-town>
+None
+2015-07-20 19:33:02 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/karthik-hotel-maduravoyal>
+None
+2015-07-20 19:33:02 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/omar-khayyam-1-t-nagar>
+None
+2015-07-20 19:33:02 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-omsakthi-bhavan-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:02 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-omsakthi-bhavan-maduravoyal>
+None
+2015-07-20 19:33:03 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-raja-vilas-egmore> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:03 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-raja-vilas-egmore>
+None
+2015-07-20 19:33:04 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/cbh-nungambakkam> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:04 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/cbh-nungambakkam>
+None
+2015-07-20 19:33:04 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bismilla-briyani-george-town> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:05 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bismilla-briyani-george-town>
+None
+2015-07-20 19:33:05 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/jayanthi-hotel-madipakkam> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:05 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/jayanthi-hotel-madipakkam>
+None
+2015-07-20 19:33:05 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/garden-fresh-vadapalani> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:05 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/garden-fresh-vadapalani>
+None
+2015-07-20 19:33:05 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/mohamad-arshath-medavakkam> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:05 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/mohamad-arshath-medavakkam>
+None
+2015-07-20 19:33:06 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/thanjai-thalappakattu-biriyani-k-k-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:06 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/thanjai-thalappakattu-biriyani-k-k-nagar>
+None
+2015-07-20 19:33:06 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/restaurants?page=112> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:07 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-j-m-valasaravakkam> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:07 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-lakshmi-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:07 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-j-m-valasaravakkam>
+None
+2015-07-20 19:33:07 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-lakshmi-maduravoyal>
+None
+2015-07-20 19:33:08 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/jamals-fried-chicken-poonamalle> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:08 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/jamals-fried-chicken-poonamalle>
+None
+2015-07-20 19:33:08 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-muneyende-velas-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:08 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-muneyende-velas-maduravoyal>
+None
+2015-07-20 19:33:09 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/dharshika-fresh-juice-porur> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:09 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/dharshika-fresh-juice-porur>
+None
+2015-07-20 19:33:09 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/r-r-fast-food-valasaravakkam> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:09 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/r-r-fast-food-valasaravakkam>
+None
+2015-07-20 19:33:10 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/relish-smoothies-1-alwarpet> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:10 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/relish-smoothies-1-alwarpet>
+None
+2015-07-20 19:33:10 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/tasty-foods-teynampet> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:10 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/thalappakattu-briyani-and-fast-food-perambur> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:10 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/tasty-foods-teynampet>
+None
+2015-07-20 19:33:10 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/thalappakattu-briyani-and-fast-food-perambur>
+None
+2015-07-20 19:33:10 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/corner-snacks-alwarpet> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:11 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/corner-snacks-alwarpet>
+None
+2015-07-20 19:33:11 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/quality-fast-food-anna-nagar-east> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:11 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/quality-fast-food-anna-nagar-east>
+None
+2015-07-20 19:33:11 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bakealicious-anna-nagar-east> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:12 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bakealicious-anna-nagar-east>
+None
+2015-07-20 19:33:12 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/sri-sweets-bakery-washermenpet> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:13 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/sri-sweets-bakery-washermenpet>
+None
+2015-07-20 19:33:13 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/sri-annalakshmi-sholinganallur> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:13 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/drive-digest-poonamalle> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:13 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/sri-annalakshmi-sholinganallur>
+None
+2015-07-20 19:33:13 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/drive-digest-poonamalle>
+None
+2015-07-20 19:33:13 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/frootster-teynampet> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:13 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/frootster-teynampet>
+None
+2015-07-20 19:33:13 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/sree-kaanchi-hotel-washermenpet> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:13 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/sree-kaanchi-hotel-washermenpet>
+None
+2015-07-20 19:33:14 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bite-sip-medavakkam> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:14 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bite-sip-medavakkam>
+None
+2015-07-20 19:33:14 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/udipi-hotel-venkateshwara-washermenpet> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:14 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/udipi-hotel-venkateshwara-washermenpet>
+None
+2015-07-20 19:33:15 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/new-hyderabad-biriyani-parrys> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:15 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/new-hyderabad-biriyani-parrys>
+None
+2015-07-20 19:33:15 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/jaya-hotel-neelangarai> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:15 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/jaya-hotel-neelangarai>
+None
+2015-07-20 19:33:15 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/amana-tea-coffee-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:15 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/amana-tea-coffee-maduravoyal>
+None
+2015-07-20 19:33:16 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/jyothi-cafe-t-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:16 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/jyothi-cafe-t-nagar>
+None
+2015-07-20 19:33:16 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/new-rolex-bakery-sweets-tambaram> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:16 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/victoria-kabab-center-egmore> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:16 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/new-rolex-bakery-sweets-tambaram>
+None
+2015-07-20 19:33:16 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/victoria-kabab-center-egmore>
+None
+2015-07-20 19:33:17 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-sri-lakshmi-bahrgavi-gst-road> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:17 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-sri-lakshmi-bahrgavi-gst-road>
+None
+2015-07-20 19:33:17 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/shree-chaats-adyar> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:17 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/shree-chaats-adyar>
+None
+2015-07-20 19:33:17 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-sri-jaya-egmore> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:18 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-sri-jaya-egmore>
+None
+2015-07-20 19:33:18 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/nellaiyappar-chettinadu-restaurant-t-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:18 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-sree-nagathaman-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:18 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/nellaiyappar-chettinadu-restaurant-t-nagar>
+None
+2015-07-20 19:33:18 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-sree-nagathaman-maduravoyal>
+None
+2015-07-20 19:33:18 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/mayuri-restaurant-fast-foods-porur> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:19 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/mayuri-restaurant-fast-foods-porur>
+None
+2015-07-20 19:33:19 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/treat-corner-avadi> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:19 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/treat-corner-avadi>
+None
+2015-07-20 19:33:19 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/heaven-park-velachery> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:20 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/heaven-park-velachery>
+None
+2015-07-20 19:33:20 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bell-hotel-park-town> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:20 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bell-hotel-park-town>
+None
+2015-07-20 19:33:20 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bismillah-restaurant-tambaram> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:21 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/mayura-bakery-ashok-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:21 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bismillah-restaurant-tambaram>
+None
+2015-07-20 19:33:21 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/mayura-bakery-ashok-nagar>
+None
+2015-07-20 19:33:21 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bala-fast-food-egmore> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:21 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bala-fast-food-egmore>
+None
+2015-07-20 19:33:21 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/restaurants/north/aminijikarai/cookie-man-69090> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:22 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/restaurants/north/aminijikarai/cookie-man-69090>
+None
+2015-07-20 19:33:22 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/golden-fast-food-valasaravakkam> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:22 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/golden-fast-food-valasaravakkam>
+None
+2015-07-20 19:33:22 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/namma-sai-vasantha-bhavan-valasaravakkam> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:23 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/eddies-popcorn-taramani> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:23 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/kajaals-tasty-bud-velachery> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:23 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/namma-sai-vasantha-bhavan-valasaravakkam>
+None
+2015-07-20 19:33:23 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/eddies-popcorn-taramani>
+None
+2015-07-20 19:33:23 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/kajaals-tasty-bud-velachery>
+None
+2015-07-20 19:33:23 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/b-g-restaurant-ramapuram> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:23 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/b-g-restaurant-ramapuram>
+None
+2015-07-20 19:33:24 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/new-golden-fruits-juice-porur> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:24 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/galaxy-restaurant-mahabalipuram> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:24 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/new-golden-fruits-juice-porur>
+None
+2015-07-20 19:33:24 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/galaxy-restaurant-mahabalipuram>
+None
+2015-07-20 19:33:25 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/greenish-restaurant-parrys> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:25 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/greenish-restaurant-parrys>
+None
+2015-07-20 19:33:25 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/delight-biriyani-fast-food-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:25 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-nellai-chettinadu-maduravoyal> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:25 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/delight-biriyani-fast-food-maduravoyal>
+None
+2015-07-20 19:33:25 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-nellai-chettinadu-maduravoyal>
+None
+2015-07-20 19:33:25 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/thariq-biriyani-st-thomas-mount> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:26 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/thariq-biriyani-st-thomas-mount>
+None
+2015-07-20 19:33:26 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/sri-malleeswar-mrc-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:26 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/sri-malleeswar-mrc-nagar>
+None
+2015-07-20 19:33:26 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/kolkata-chat-1-mylapore> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:26 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/kolkata-chat-1-mylapore>
+None
+2015-07-20 19:33:26 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/rusi-a-family-restaurant-washermenpet> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:26 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/rusi-a-family-restaurant-washermenpet>
+None
+2015-07-20 19:33:27 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/rich-ice-cream-nungambakkam> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:27 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/rich-ice-cream-nungambakkam>
+None
+2015-07-20 19:33:28 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/dharshika-fresh-juice-2-porur> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:28 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/dharshika-fresh-juice-2-porur>
+None
+2015-07-20 19:33:28 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/the-village-inn-mahabalipuram> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:28 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/the-village-inn-mahabalipuram>
+None
+2015-07-20 19:33:28 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hot-bakes-anna-nagar-west> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:29 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hot-bakes-anna-nagar-west>
+None
+2015-07-20 19:33:29 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bhavadhaarani-juice-shop-kilpauk> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:29 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bhavadhaarani-juice-shop-kilpauk>
+None
+2015-07-20 19:33:29 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/swagath-juice-n-snacks-adyar> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:29 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/swagath-juice-n-snacks-adyar>
+None
+2015-07-20 19:33:29 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/kolkata-chat-mandaveli> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:29 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/restaurants/north/perambur/hfc-68992> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:30 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/kolkata-chat-mandaveli>
+None
+2015-07-20 19:33:30 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/restaurants/north/perambur/hfc-68992>
+None
+2015-07-20 19:33:30 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/friends-chettinad-restaurant-arumbakkam> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:30 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/friends-chettinad-restaurant-arumbakkam>
+None
+2015-07-20 19:33:30 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/bismilla-hotel-washermenpet> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:30 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/bismilla-hotel-washermenpet>
+None
+2015-07-20 19:33:31 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/hotel-sree-bhavan-k-k-nagar> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:31 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/hotel-sree-bhavan-k-k-nagar>
+None
+2015-07-20 19:33:31 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/elshadai-family-restaurant-tambaram> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:32 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/elshadai-family-restaurant-tambaram>
+None
+2015-07-20 19:33:32 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/masa-restaurant-egmore> (referer: https://www.zomato.com/chennai/restaurants?page=110)
+2015-07-20 19:33:32 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/masa-restaurant-egmore>
+None
+2015-07-20 19:33:35 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/tasty-kitchen-kolathur> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:35 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/tasty-kitchen-kolathur>
+None
+2015-07-20 19:33:48 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/creamy-n-tasty-kolathur> (referer: https://www.zomato.com/chennai/restaurants?page=111)
+2015-07-20 19:33:48 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/creamy-n-tasty-kolathur>
+None
+2015-07-20 19:33:50 [scrapy] DEBUG: Crawled (200) <GET https://www.zomato.com/chennai/lulu-biriyani-centre-porur> (referer: https://www.zomato.com/chennai/restaurants?page=112)
+2015-07-20 19:33:50 [scrapy] DEBUG: Scraped from <200 https://www.zomato.com/chennai/lulu-biriyani-centre-porur>
+None
+2015-07-20 19:33:50 [scrapy] INFO: Closing spider (finished)
+2015-07-20 19:33:50 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 42053,
+ 'downloader/request_count': 85,
+ 'downloader/request_method_count/GET': 85,
+ 'downloader/response_bytes': 2002029,
+ 'downloader/response_count': 85,
+ 'downloader/response_status_count/200': 85,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 7, 20, 14, 3, 50, 502000),
+ 'item_scraped_count': 82,
+ 'log_count/DEBUG': 169,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 7,
+ 'request_depth_max': 3,
+ 'response_received_count': 85,
+ 'scheduler/dequeued': 85,
+ 'scheduler/dequeued/memory': 85,
+ 'scheduler/enqueued': 85,
+ 'scheduler/enqueued/memory': 85,
+ 'start_time': datetime.datetime(2015, 7, 20, 14, 2, 57, 365000)}
+2015-07-20 19:33:50 [scrapy] INFO: Spider closed (finished)
