@@ -1,6 +1,6 @@
 # ZomatoData
 
-A Scrapy project to scrape restaurant information from [Zomato](www.zomato.com).
+A Scrapy project to scrape restaurant information from [Zomato](http://zomato.com/).
 Currently only restaurant information from New Delhi, Kolkata, Mumbai,
 Hyderabad, Chennai, Bangalore, Mysore have been scraped. 
 
