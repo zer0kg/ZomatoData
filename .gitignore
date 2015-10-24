@@ -1,3 +1,4 @@
 .*
 scrapy.cfg
-/build/*
+build
+project.egg-info
